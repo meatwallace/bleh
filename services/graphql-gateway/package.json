@@ -1,0 +1,7 @@
+{
+  "name": "@bleh/graphql-gateway",
+  "private": true,
+  "dependencies": {
+    "fastify": "3.22.1"
+  }
+}

@@ -1,4 +1,13 @@
 {
   "name": "@bleh/all",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@yarnpkg/pnpify": "3.1.1-rc.2"
+  },
+  "packageManager": "yarn@3.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ]
 }
