@@ -21,4 +21,4 @@ WORKDIR /app
 
 COPY --from=build /app ./
 
-CMD ["yarn", "node", "index.js"]
+CMD ["yarn", "node", "server/index.js"]

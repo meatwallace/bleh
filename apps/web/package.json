@@ -2,6 +2,7 @@
   "name": "@bleh/web",
   "private": true,
   "dependencies": {
-    "fastify": "3.22.1"
+    "fastify": "3.22.1",
+    "fastify-static": "4.4.2"
   }
 }
