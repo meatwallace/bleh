@@ -33,6 +33,8 @@ __metadata:
 "@bleh/web@workspace:apps/web":
   version: 0.0.0-use.local
   resolution: "@bleh/web@workspace:apps/web"
+  dependencies:
+    fastify: 3.22.1
   languageName: unknown
   linkType: soft
 

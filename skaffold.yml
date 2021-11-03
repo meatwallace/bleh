@@ -1,0 +1,32 @@
+apiVersion: skaffold/v2beta25
+kind: Config
+metadata:
+  name: bleh
+build:
+  artifacts:
+    - image: apps-web
+      context: .
+      docker:
+        dockerfile: apps/web/Dockerfile
+        buildArgs:
+          ENV: development
+    - image: services-graphql-gateway
+      context: .
+      docker:
+        dockerfile: services/graphql-gateway/Dockerfile
+        buildArgs:
+          ENV: development
+  local:
+    push: false
+deploy:
+  kubectl:
+    manifests:
+      - apps/web/deployment.yml
+      - services/graphql-gateway/deployment.yml
+portForward:
+  - resourceType: service
+    resourceName: apps-web
+    port: 8080
+  - resourceType: service
+    resourceName: services-graphql-gateway
+    port: 3000

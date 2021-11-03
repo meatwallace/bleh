@@ -84,7 +84,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:apps/web", {
           "packageLocation": "./apps/web/",
           "packageDependencies": [
-            ["@bleh/web", "workspace:apps/web"]
+            ["@bleh/web", "workspace:apps/web"],
+            ["fastify", "npm:3.22.1"]
           ],
           "linkType": "SOFT",
         }]

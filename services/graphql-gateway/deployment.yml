@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: services-graphql-gateway
+  labels:
+    app: services-graphql-gateway
+spec:
+  clusterIP: None
+  selector:
+    app: services-graphql-gateway
+  ports:
+    - port: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: services-graphql-gateway
+  labels:
+    app: services-graphql-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: services-graphql-gateway
+  template:
+    metadata:
+      labels:
+        app: services-graphql-gateway
+    spec:
+      containers:
+        - name: services-graphql-gateway
+          image: services-graphql-gateway

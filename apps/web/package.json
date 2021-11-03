@@ -1,4 +1,7 @@
 {
   "name": "@bleh/web",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "fastify": "3.22.1"
+  }
 }

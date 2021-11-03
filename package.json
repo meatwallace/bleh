@@ -1,6 +1,9 @@
 {
   "name": "@bleh/all",
   "private": true,
+  "scripts": {
+    "dev:fullstack": "skaffold dev"
+  },
   "devDependencies": {
     "@yarnpkg/pnpify": "3.1.1-rc.2"
   },

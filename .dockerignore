@@ -1,0 +1,9 @@
+.dockerignore
+.git
+.gitattributes
+.gitignore
+**/deployment.yml
+**/Dockerfile
+LICENSE
+README.md
+skaffold.yml
