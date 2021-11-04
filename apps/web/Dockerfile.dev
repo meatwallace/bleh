@@ -1,0 +1,14 @@
+FROM mhart/alpine-node:16.4.2
+
+WORKDIR /app
+
+# copy all of our yarn related configs & metadata
+COPY .pnp.cjs package.json .yarnrc.yml yarn.lock ./
+
+# copy our app and all potential dependencies
+COPY apps/web/ ./apps/web
+COPY packages/ ./packages
+
+EXPOSE 3000
+
+CMD ["yarn", "workspace", "@bleh/web", "dev"]

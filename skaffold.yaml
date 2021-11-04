@@ -6,14 +6,25 @@ build:
   artifacts:
     - image: apps-web
       context: .
+      sync:
+        infer:
+          - "**/*.css"
+          - "**/*.html"
+          - "**/*.js"
+          - "**/*.ts"
+          - "**/*.tsx"
       docker:
-        dockerfile: apps/web/Dockerfile
+        dockerfile: apps/web/Dockerfile.dev
         buildArgs:
           ENV: development
     - image: services-graphql-gateway
       context: .
+      sync:
+        infer:
+          - "**/*.ts"
+          - "**/*.js"
       docker:
-        dockerfile: services/graphql-gateway/Dockerfile
+        dockerfile: services/graphql-gateway/Dockerfile.dev
         buildArgs:
           ENV: development
   local:

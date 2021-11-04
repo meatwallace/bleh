@@ -30,6 +30,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@bleh/types@workspace:packages/types":
+  version: 0.0.0-use.local
+  resolution: "@bleh/types@workspace:packages/types"
+  languageName: unknown
+  linkType: soft
+
 "@bleh/web@workspace:apps/web":
   version: 0.0.0-use.local
   resolution: "@bleh/web@workspace:apps/web"

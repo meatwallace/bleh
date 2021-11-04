@@ -30,3 +30,11 @@ spec:
       containers:
         - name: services-graphql-gateway
           image: services-graphql-gateway
+          volumeMounts:
+            - name: yarn-cache-volume
+              mountPath: /app/.yarn
+      volumes:
+        - name: yarn-cache-volume
+          hostPath:
+            path: /.yarn/
+            type: Directory

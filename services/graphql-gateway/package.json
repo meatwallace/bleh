@@ -1,6 +1,9 @@
 {
   "name": "@bleh/graphql-gateway",
   "private": true,
+  "scripts": {
+    "dev": "yarn node index.js"
+  },
   "dependencies": {
     "fastify": "3.22.1"
   }

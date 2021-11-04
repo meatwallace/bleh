@@ -27,6 +27,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:apps/web"
       },
       {
+        "name": "@bleh/types",
+        "reference": "workspace:packages/types"
+      },
+      {
         "name": "@bleh/graphql-gateway",
         "reference": "workspace:services/graphql-gateway"
       }
@@ -36,6 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [
       ["@bleh/all", ["workspace:."]],
       ["@bleh/graphql-gateway", ["workspace:services/graphql-gateway"]],
+      ["@bleh/types", ["workspace:packages/types"]],
       ["@bleh/web", ["workspace:apps/web"]]
     ],
     "fallbackPool": [
@@ -76,6 +81,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@bleh/graphql-gateway", "workspace:services/graphql-gateway"],
             ["fastify", "npm:3.22.1"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@bleh/types", [
+        ["workspace:packages/types", {
+          "packageLocation": "./packages/types/",
+          "packageDependencies": [
+            ["@bleh/types", "workspace:packages/types"]
           ],
           "linkType": "SOFT",
         }]
