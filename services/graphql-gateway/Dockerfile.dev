@@ -2,13 +2,15 @@ FROM mhart/alpine-node:16.4.2
 
 WORKDIR /app
 
-# copy all of our yarn related configs & metadata
-COPY .pnp.cjs package.json .yarnrc.yml yarn.lock ./
+# copy our repo level configs, yarn package cache, etc
+COPY .pnp.cjs .pnp.loader.mjs .yarnrc.yml package.json tsconfig.json yarn.lock ./
 
-# copy our service and all potential dependencies
-COPY services/graphql-gateway/ ./services/graphql-gateway
+# copy our potential local dependencies
 COPY packages/ ./packages
+
+# copy our service
+COPY services/graphql-gateway/ ./services/graphql-gateway
 
 EXPOSE 3000
 
-CMD ["yarn", "workspace", "@bleh/graphql-gateway", "dev"]
+CMD ["yarn", "workspace", "@bleh/graphql-gateway", "start"]

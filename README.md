@@ -4,27 +4,29 @@ eh.
 
 ## dev setup
 
-### \*nix
+### install dependencies
+
+#### \*nix
 
 ```sh
 # TODO
 ```
 
-### macOS
+#### macOS
 
 ```sh
-# install dependencies
 brew install kind kubectl skaffold
+```
 
+### spin up local environment on k8s
+
+```sh
 # spin up a k8s cluster
-kind create cluster
+yarn run dev:create
 
 # confirm the cluster is good
-kubectl cluster-info --context kind-kind
+yarn run dev:info
 
 # run the full dev stack
 yarn run dev:fullstack
-
-# check pod status
-kubectl describe pods
 ```

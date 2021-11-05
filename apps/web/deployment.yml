@@ -31,22 +31,10 @@ spec:
         - name: apps-web
           image: apps-web
           volumeMounts:
-            - name: source-volume
-              mountPath: /app/apps/web
             - name: yarn-cache-volume
               mountPath: /app/.yarn
-            - name: pnp-map-volume
-              mountPath: /app/.pnp.cjs
       volumes:
-        - name: source-volume
-          hostPath:
-            path: /apps/web
-            type: Directory
         - name: yarn-cache-volume
           hostPath:
             path: /.yarn
             type: Directory
-        - name: pnp-map-volume
-          hostPath:
-            path: /.pnp.cjs
-            type: File

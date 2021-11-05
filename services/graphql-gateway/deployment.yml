@@ -36,5 +36,5 @@ spec:
       volumes:
         - name: yarn-cache-volume
           hostPath:
-            path: /.yarn/
+            path: /.yarn
             type: Directory
